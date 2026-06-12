@@ -9,11 +9,27 @@ stages
 {
 stage('checkout')
 {
-steps{step{checkout scm}}
+steps
+  {
+    checkout scm
+  }
+  }
 stage('B&T')
 {
-steps{step{sh 'mvn clean install'}}
+steps
+  {
+  
+      sh 'mvn clean install'
+    }
+  }
 stage('run')
 {
-steps{step{sh 'java -jar target/*.jar'}}
-}}}}}
+steps
+  {
+    
+      sh 'java -jar target/*.jar'
+  }
+  
+  }
+}
+}
